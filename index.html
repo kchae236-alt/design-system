@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>서비스 이름</title>
+<title>터치 데스크 램프</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
 :root{
-  --black:#0B0B0C; --gray-900:#141518; --gray-700:#2A2D33; --gray-500:#6E737D;
-  --gray-300:#B9BDC5; --gray-100:#E8EAEE; --white:#FFFFFF;
-  --accent-500:#4F7CFF; --accent-300:#8AA7FF; --accent-700:#2E57C8;
+  --linen-300:#E4DED4; --linen-100:#EEE9E1; --ash-500:#B7ADA2; --pine-500:#7A857C;
+  --walnut-300:#6E5848; --walnut-500:#5A3B28; --walnut-900:#2E1E14;
 
-  --bg-canvas:var(--black); --bg-surface:var(--gray-900); --bg-signal:var(--accent-500);
-  --fg-primary:var(--white); --fg-secondary:var(--gray-300); --fg-muted:var(--gray-500);
-  --fg-signal:var(--accent-300); --border-hairline:var(--gray-700);
+  --bg-canvas:var(--linen-300); --bg-surface:var(--linen-100); --bg-signal:var(--walnut-500);
+  --fg-primary:var(--walnut-900); --fg-secondary:var(--walnut-500); --fg-muted:var(--walnut-300);
+  --fg-signal:var(--walnut-500); --border-hairline:var(--ash-500);
 
   --font-text:Pretendard,system-ui,sans-serif;
   --font-mono:'SF Mono',ui-monospace,monospace;
@@ -101,7 +100,7 @@ img{display:block;width:100%}
 .card{display:flex;flex-direction:column;gap:var(--card-gap);
   padding:var(--card-padding);background:var(--bg-surface);
   border-radius:var(--radius-none)}
-.card img{aspect-ratio:var(--card-media-ratio);object-fit:cover;background:var(--gray-700)}
+.card img{aspect-ratio:var(--card-media-ratio);object-fit:cover;background:var(--pine-500)}
 .card dl{display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);
   margin:0;font-family:var(--font-mono);font-size:var(--size-2xs);
   font-weight:var(--weight-medium);letter-spacing:var(--tracking-label)}
@@ -130,14 +129,14 @@ footer a{color:var(--fg-signal)}
 <header class="wrap section">
   <div class="grid">
     <div class="col-8">
-      <p class="label">서비스 이름</p>
-      <h1 class="display">여기에 한 줄 컨셉을 적습니다</h1>
-      <p class="lead">서비스가 무엇을 하는지 두 문장으로 적습니다. 누구를 위한 것이고,
-        무엇을 대신해 주는지까지 적으면 충분합니다.</p>
+      <p class="label">터치 데스크 램프</p>
+      <h1 class="display">손끝 한 번으로 켜지는 빛</h1>
+      <p class="lead">버튼 없이 터치만으로 켜고 끄는 미니멀 데스크 램프입니다.
+        한 번 터치하면 켜고 끄고, 두 번 터치하면 밝기를 조절합니다.</p>
       <div class="btns">
-        <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
+        <a class="btn btn--primary" href="#features">기능 보기</a>
         <a class="btn btn--secondary" href="#contact">문의하기</a>
-        <a class="btn btn--utility" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn--utility" href="https://github.com/kchae236-alt/design-system" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
   </div>
@@ -146,43 +145,43 @@ footer a{color:var(--fg-signal)}
 <hr class="rule">
 
 <main>
-  <section class="wrap section" id="projects">
+  <section class="wrap section" id="features">
     <div class="grid">
-      <div class="col-12"><h2 class="h2">프로젝트</h2></div>
+      <div class="col-12"><h2 class="h2">기능</h2></div>
 
       <article class="card col-4">
-        <img src="https://placehold.co/800x600/2A2D33/6E737D?text=1" alt="">
-        <p class="label">2026</p>
-        <h3 class="h3">첫 번째 프로젝트</h3>
-        <p class="small">한 줄 설명을 적습니다. 무엇을 만들었고 무엇이 달라졌는지.</p>
+        <img src="https://placehold.co/800x600/7A857C/E4DED4?text=1" alt="">
+        <p class="label">01</p>
+        <h3 class="h3">한 번 터치</h3>
+        <p class="small">터치 한 번으로 램프를 켜고 끕니다. 스위치는 없습니다.</p>
         <dl>
-          <dt>분류</dt><dd>제품</dd>
-          <dt>기간</dt><dd>4주</dd>
-          <dt>역할</dt><dd>설계, 구현</dd>
+          <dt>입력</dt><dd>터치 1회</dd>
+          <dt>동작</dt><dd>점등, 소등</dd>
+          <dt>반응</dt><dd>LED</dd>
         </dl>
       </article>
 
       <article class="card col-4">
-        <img src="https://placehold.co/800x600/2A2D33/6E737D?text=2" alt="">
-        <p class="label">2026</p>
-        <h3 class="h3">두 번째 프로젝트</h3>
-        <p class="small">한 줄 설명을 적습니다. 무엇을 만들었고 무엇이 달라졌는지.</p>
+        <img src="https://placehold.co/800x600/7A857C/E4DED4?text=2" alt="">
+        <p class="label">02</p>
+        <h3 class="h3">두 번 터치</h3>
+        <p class="small">두 번 터치하면 밝기를 조절합니다. 필요한 만큼만 밝힙니다.</p>
         <dl>
-          <dt>분류</dt><dd>서비스</dd>
-          <dt>기간</dt><dd>6주</dd>
-          <dt>역할</dt><dd>디자인</dd>
+          <dt>입력</dt><dd>터치 2회</dd>
+          <dt>동작</dt><dd>밝기 조절</dd>
+          <dt>반응</dt><dd>LED</dd>
         </dl>
       </article>
 
       <article class="card col-4">
-        <img src="https://placehold.co/800x600/2A2D33/6E737D?text=3" alt="">
-        <p class="label">2026</p>
-        <h3 class="h3">세 번째 프로젝트</h3>
-        <p class="small">한 줄 설명을 적습니다. 무엇을 만들었고 무엇이 달라졌는지.</p>
+        <img src="https://placehold.co/800x600/7A857C/E4DED4?text=3" alt="">
+        <p class="label">03</p>
+        <h3 class="h3">웹페이지 반응</h3>
+        <p class="small">터치 길이에 따라 켜지고 꺼질 때 화면 UI도 함께 반응합니다.</p>
         <dl>
-          <dt>분류</dt><dd>실험</dd>
-          <dt>기간</dt><dd>2주</dd>
-          <dt>역할</dt><dd>전체</dd>
+          <dt>입력</dt><dd>터치 길이</dd>
+          <dt>동작</dt><dd>점등, 소등</dd>
+          <dt>반응</dt><dd>화면 UI</dd>
         </dl>
       </article>
     </div>
@@ -194,10 +193,10 @@ footer a{color:var(--fg-signal)}
     <div class="grid">
       <div class="col-8">
         <h2 class="h2">소개</h2>
-        <p class="body">여기에 서비스나 작업에 대한 설명을 적습니다. 한 줄에 75자를 넘기지 않으면
-          읽는 사람이 줄을 놓치지 않습니다. 문단은 세 개를 넘기지 않는 편이 좋습니다.</p>
-        <p class="body">두 번째 문단입니다. 레퍼런스에서 가져온 태도가 이 문단의 길이와 여백에
-          그대로 드러나야 합니다.</p>
+        <p class="body">LED를 담은 슬라이드 하우징 위에 반투명 필라멘트 확산판을 얹어 빛을 부드럽게
+          퍼뜨립니다. 아두이노와 빵판은 커버와 벽 뒤에 두어 눈에 보이지 않습니다.</p>
+        <p class="body">키워드는 Minimal, Touch, Warm light입니다. 색은 Nordic Linen, Ash Wood,
+          Pine Smoke, Walnut 네 가지 안에서만 씁니다.</p>
       </div>
     </div>
   </section>
@@ -222,8 +221,8 @@ footer a{color:var(--fg-signal)}
             <textarea id="message" placeholder="내용을 입력하세요"></textarea>
           </div>
           <div class="btns">
-            <button class="btn btn--primary" type="submit">보내기</button>
-            <button class="btn btn--secondary" type="reset">지우기</button>
+            <button class="btn btn--secondary" type="submit">보내기</button>
+            <button class="btn btn--utility" type="reset">지우기</button>
           </div>
         </form>
       </div>
@@ -236,8 +235,9 @@ footer a{color:var(--fg-signal)}
 <footer class="wrap">
   <div class="grid">
     <div class="col-12">
-      <p>디자인 시스템 문서 · <a href="design-system/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md</a>
-        · <a href="design-system/tokens.json">tokens.json</a></p>
+      <p>2025220005 김채은 · 디자인프로토타이핑 26-2 · 디자인 시스템 문서
+        · <a href="https://github.com/kchae236-alt/design-system/blob/main/design-system/DESIGN_SYSTEM.md" target="_blank" rel="noopener">DESIGN_SYSTEM.md</a>
+        · <a href="https://github.com/kchae236-alt/design-system/blob/main/design-system/tokens.json" target="_blank" rel="noopener">tokens.json</a></p>
     </div>
   </div>
 </footer>
