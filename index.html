@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서비스 이름</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+  --black:#0B0B0C; --gray-900:#141518; --gray-700:#2A2D33; --gray-500:#6E737D;
+  --gray-300:#B9BDC5; --gray-100:#E8EAEE; --white:#FFFFFF;
+  --accent-500:#4F7CFF; --accent-300:#8AA7FF; --accent-700:#2E57C8;
+
+  --bg-canvas:var(--black); --bg-surface:var(--gray-900); --bg-signal:var(--accent-500);
+  --fg-primary:var(--white); --fg-secondary:var(--gray-300); --fg-muted:var(--gray-500);
+  --fg-signal:var(--accent-300); --border-hairline:var(--gray-700);
+
+  --font-text:Pretendard,system-ui,sans-serif;
+  --font-mono:'SF Mono',ui-monospace,monospace;
+  --weight-regular:400; --weight-medium:500; --weight-bold:700;
+  --size-3xs:11px; --size-2xs:12px; --size-xs:14px; --size-sm:16px;
+  --size-md:20px; --size-lg:28px; --size-xl:40px; --size-2xl:56px;
+  --leading-tight:1.1; --leading-snug:1.3; --leading-normal:1.6;
+  --tracking-heading:-0.02em; --tracking-label:0.08em;
+
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px;
+
+  --radius-none:0px; --radius-sm:4px; --radius-md:8px; --radius-lg:16px; --radius-pill:999px;
+
+  --duration-fast:120ms; --duration-base:240ms; --duration-slow:480ms;
+  --easing-standard:cubic-bezier(.2,0,0,1);
+
+  --btn-height:44px; --btn-padding-x:var(--space-5);
+  --field-height:44px; --field-padding-x:var(--space-4); --field-textarea-min:120px;
+  --card-padding:var(--space-5); --card-media-ratio:4/3; --card-gap:var(--space-4);
+  --grid-gutter:var(--space-5); --grid-margin:var(--space-6); --grid-max:1200px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg-canvas); color:var(--fg-primary);
+  font-family:var(--font-text); font-size:var(--size-sm);
+  font-weight:var(--weight-regular); line-height:var(--leading-normal);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%}
+
+.wrap{max-width:var(--grid-max);margin:0 auto;padding:0 var(--grid-margin)}
+.section{padding:var(--space-9) 0}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--grid-gutter)}
+.col-4{grid-column:span 4} .col-6{grid-column:span 6}
+.col-8{grid-column:span 8} .col-12{grid-column:span 12}
+
+.label{font-family:var(--font-mono);font-size:var(--size-2xs);
+  font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);
+  text-transform:uppercase;color:var(--fg-muted)}
+.display{font-size:var(--size-2xl);font-weight:var(--weight-bold);
+  letter-spacing:var(--tracking-heading);line-height:var(--leading-tight);margin:var(--space-4) 0 0}
+.h2{font-size:var(--size-xl);font-weight:var(--weight-bold);
+  letter-spacing:var(--tracking-heading);line-height:var(--leading-tight);margin:0}
+.h3{font-size:var(--size-md);font-weight:var(--weight-medium);
+  letter-spacing:var(--tracking-heading);line-height:var(--leading-snug);margin:0}
+.lead{font-size:var(--size-md);color:var(--fg-secondary);
+  margin:var(--space-5) 0 0;max-width:62ch}
+.body{color:var(--fg-secondary);margin:var(--space-5) 0 0;max-width:75ch}
+.small{font-size:var(--size-xs);color:var(--fg-secondary);margin:0}
+
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
+.btn{display:inline-flex;align-items:center;justify-content:center;
+  height:var(--btn-height);padding:0 var(--btn-padding-x);
+  border-radius:var(--radius-none);border:1px solid transparent;
+  font-family:var(--font-text);font-size:var(--size-xs);
+  font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);
+  text-decoration:none;cursor:pointer;background:none;
+  transition:filter var(--duration-fast) var(--easing-standard),
+             border-color var(--duration-fast) var(--easing-standard)}
+.btn--primary{background:var(--bg-signal);color:var(--bg-canvas)}
+.btn--secondary{border-color:var(--border-hairline);color:var(--fg-primary)}
+.btn--utility{color:var(--fg-muted)}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{filter:brightness(.92)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+.field{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-5)}
+.field label{font-family:var(--font-mono);font-size:var(--size-2xs);
+  font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);
+  text-transform:uppercase;color:var(--fg-muted)}
+.field input,.field textarea{
+  height:var(--field-height);padding:0 var(--field-padding-x);
+  background:transparent;color:var(--fg-primary);
+  border:1px solid var(--border-hairline);border-radius:var(--radius-none);
+  font-family:var(--font-text);font-size:var(--size-sm);
+  transition:border-color var(--duration-fast) var(--easing-standard)}
+.field textarea{height:auto;min-height:var(--field-textarea-min);
+  padding:var(--space-3) var(--field-padding-x);resize:vertical;
+  line-height:var(--leading-normal)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--bg-signal)}
+
+.card{display:flex;flex-direction:column;gap:var(--card-gap);
+  padding:var(--card-padding);background:var(--bg-surface);
+  border-radius:var(--radius-none)}
+.card img{aspect-ratio:var(--card-media-ratio);object-fit:cover;background:var(--gray-700)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:var(--space-2) var(--space-4);
+  margin:0;font-family:var(--font-mono);font-size:var(--size-2xs);
+  font-weight:var(--weight-medium);letter-spacing:var(--tracking-label)}
+.card dt{color:var(--fg-muted)} .card dd{margin:0;color:var(--fg-secondary);text-align:right}
+
+.rule{height:1px;background:var(--border-hairline);border:0;margin:0}
+footer{padding:var(--space-7) 0;color:var(--fg-muted);font-size:var(--size-xs)}
+footer a{color:var(--fg-signal)}
+
+@media (max-width:1023px){
+  .col-4{grid-column:span 3} .col-6,.col-8{grid-column:span 6}
+  .grid{grid-template-columns:repeat(6,1fr)}
+}
+@media (max-width:767px){
+  .grid{grid-template-columns:1fr}
+  .col-4,.col-6,.col-8,.col-12{grid-column:span 1}
+  .section{padding:var(--space-8) 0}
+  .display{font-size:var(--size-xl)}
+  .h2{font-size:var(--size-lg)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="wrap section">
+  <div class="grid">
+    <div class="col-8">
+      <p class="label">서비스 이름</p>
+      <h1 class="display">여기에 한 줄 컨셉을 적습니다</h1>
+      <p class="lead">서비스가 무엇을 하는지 두 문장으로 적습니다. 누구를 위한 것이고,
+        무엇을 대신해 주는지까지 적으면 충분합니다.</p>
+      <div class="btns">
+        <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
+        <a class="btn btn--secondary" href="#contact">문의하기</a>
+        <a class="btn btn--utility" href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="rule">
+
+<main>
+  <section class="wrap section" id="projects">
+    <div class="grid">
+      <div class="col-12"><h2 class="h2">프로젝트</h2></div>
+
+      <article class="card col-4">
+        <img src="https://placehold.co/800x600/2A2D33/6E737D?text=1" alt="">
+        <p class="label">2026</p>
+        <h3 class="h3">첫 번째 프로젝트</h3>
+        <p class="small">한 줄 설명을 적습니다. 무엇을 만들었고 무엇이 달라졌는지.</p>
+        <dl>
+          <dt>분류</dt><dd>제품</dd>
+          <dt>기간</dt><dd>4주</dd>
+          <dt>역할</dt><dd>설계, 구현</dd>
+        </dl>
+      </article>
+
+      <article class="card col-4">
+        <img src="https://placehold.co/800x600/2A2D33/6E737D?text=2" alt="">
+        <p class="label">2026</p>
+        <h3 class="h3">두 번째 프로젝트</h3>
+        <p class="small">한 줄 설명을 적습니다. 무엇을 만들었고 무엇이 달라졌는지.</p>
+        <dl>
+          <dt>분류</dt><dd>서비스</dd>
+          <dt>기간</dt><dd>6주</dd>
+          <dt>역할</dt><dd>디자인</dd>
+        </dl>
+      </article>
+
+      <article class="card col-4">
+        <img src="https://placehold.co/800x600/2A2D33/6E737D?text=3" alt="">
+        <p class="label">2026</p>
+        <h3 class="h3">세 번째 프로젝트</h3>
+        <p class="small">한 줄 설명을 적습니다. 무엇을 만들었고 무엇이 달라졌는지.</p>
+        <dl>
+          <dt>분류</dt><dd>실험</dd>
+          <dt>기간</dt><dd>2주</dd>
+          <dt>역할</dt><dd>전체</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="wrap section" id="about">
+    <div class="grid">
+      <div class="col-8">
+        <h2 class="h2">소개</h2>
+        <p class="body">여기에 서비스나 작업에 대한 설명을 적습니다. 한 줄에 75자를 넘기지 않으면
+          읽는 사람이 줄을 놓치지 않습니다. 문단은 세 개를 넘기지 않는 편이 좋습니다.</p>
+        <p class="body">두 번째 문단입니다. 레퍼런스에서 가져온 태도가 이 문단의 길이와 여백에
+          그대로 드러나야 합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="wrap section" id="contact">
+    <div class="grid">
+      <div class="col-6">
+        <h2 class="h2">문의</h2>
+        <form onsubmit="event.preventDefault()">
+          <div class="field">
+            <label for="name">이름</label>
+            <input id="name" type="text" placeholder="이름을 입력하세요">
+          </div>
+          <div class="field">
+            <label for="email">이메일</label>
+            <input id="email" type="email" placeholder="name@example.com">
+          </div>
+          <div class="field">
+            <label for="message">내용</label>
+            <textarea id="message" placeholder="내용을 입력하세요"></textarea>
+          </div>
+          <div class="btns">
+            <button class="btn btn--primary" type="submit">보내기</button>
+            <button class="btn btn--secondary" type="reset">지우기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<hr class="rule">
+
+<footer class="wrap">
+  <div class="grid">
+    <div class="col-12">
+      <p>디자인 시스템 문서 · <a href="design-system/DESIGN_SYSTEM.md">DESIGN_SYSTEM.md</a>
+        · <a href="design-system/tokens.json">tokens.json</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
